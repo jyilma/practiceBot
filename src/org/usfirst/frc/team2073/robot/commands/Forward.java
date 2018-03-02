@@ -9,11 +9,9 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Forward extends Command {
-
-    private static final Subsystem DriveTrain = null;
-
+	
 	public Forward() {
-    	requires(DriveTrain);
+    	requires(Robot.drivetrain);
     	//setTimeout(.5);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
