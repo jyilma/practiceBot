@@ -3,6 +3,8 @@ package org.usfirst.frc.team2073.robot.commands;
 import org.usfirst.frc.team2073.robot.Robot;
 import org.usfirst.frc.team2073.robot.subsystems.DriveTrain;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -39,7 +41,7 @@ public class LinearAccelerationToVelocity extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-		motor.set(ControlMode.PercentOutput, velocity);
+//		motor.set(ControlMode.PercentOutput, velocity);
 		System.out.println(time);
     }
 

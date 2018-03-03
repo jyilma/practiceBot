@@ -7,6 +7,8 @@
 
 package org.usfirst.frc.team2073.robot;
 
+import org.usfirst.frc.team2073.robot.commands.Drive;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -27,23 +29,11 @@ public class OI {
 	public static Joystick getJoystick (){
 		return stick;
 	}
-	public static JoystickButton getJoystickButton (){
-		return x;
-	}
-	public static JoystickButton getJoystickButton(){
-		return a;
-	}
-	public static JoystickButton getJoystickButton(){
-		return b;
-	}
-	public static JoystickButton getJoystickButton(){
-		return y;
-	}
 	public OI (){
 		x.whileHeld(new Drive(-.5));
 		a.whileHeld(new Drive(-1));
 		b.whileHeld(new Drive(.5));
-		y.whenPressed(new Drive(-.1))
+		y.whenPressed(new Drive(-.1));
 		
 	}
 	//// CREATING BUTTONS
