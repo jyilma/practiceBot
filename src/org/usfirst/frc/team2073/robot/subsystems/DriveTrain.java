@@ -16,21 +16,34 @@ public class DriveTrain extends Subsystem{
 	public TalonSRX motor = new TalonSRX(4);
 	Talon frontLeft, frontRight, rearLeft, rearRight;
 	private Joystick stick = OI.getJoystick();
+	private JoystickButton x = OI.getJoystickButton();
 
     public void initDefaultCommand() {
     	
   
     }
     public void getY(){
-    	setMotorSpeed(stick.getRawAxis(1));
+    	setMotorSpeed(-stick.getRawAxis(1));
     	
+    }
+    public void halfSpeed(){
+    	setMotorSpeed(-.5);
+    }
+    public void fullSpeed(){
+    	setMotorSpeed(-1);
+    }
+    public void halfReverse(){
+    	setMotorSpeed(.5);
+    }
+    public void slow(){
+    	setMotorSpeed(-.1);
     }
 
     public void forward() {
-    	motor.set(null, .5);
+    	motor.set(0, .5);
     }
     public void reverse() {
-    	motor.set(null, -.5);
+    	motor.set(0, -.5);
     }
     public void stop() {
 		motor.set(ControlMode.PercentOutput, 0);

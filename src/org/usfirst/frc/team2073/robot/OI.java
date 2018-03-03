@@ -16,10 +16,35 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+
 	public static Joystick stick= new Joystick(1);
+	public static Button x = new JoystickButton(stick,3);
+	public static Button a = new JoystickButton(stick,1);
+	public static Button b = new JoystickButton(stick,2);
+	public static Button y = new JoystickButton(stick,4);
+
 	Button button = new JoystickButton(stick,1);
 	public static Joystick getJoystick (){
 		return stick;
+	}
+	public static JoystickButton getJoystickButton (){
+		return x;
+	}
+	public static JoystickButton getJoystickButton(){
+		return a;
+	}
+	public static JoystickButton getJoystickButton(){
+		return b;
+	}
+	public static JoystickButton getJoystickButton(){
+		return y;
+	}
+	public OI (){
+		x.whileHeld(new Drive(-.5));
+		a.whileHeld(new Drive(-1));
+		b.whileHeld(new Drive(.5));
+		y.whenPressed(new Drive(-.1))
+		
 	}
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
